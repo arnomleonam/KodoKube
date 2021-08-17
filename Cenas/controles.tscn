@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Imagens/controles/up.png" type="Texture" id=1]
+[ext_resource path="res://Imagens/controles/right.png" type="Texture" id=2]
+[ext_resource path="res://Imagens/controles/left.png" type="Texture" id=3]
+[ext_resource path="res://Imagens/controles/down.png" type="Texture" id=4]
+
+[node name="controles" type="Node2D"]
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2( 8, 120 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 3 )
+action = "ui_left"
+
+[node name="down" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 144 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 4 )
+action = "ui_down"
+
+[node name="up" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 96 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 1 )
+action = "ui_up"
+
+[node name="down2" type="TouchScreenButton" parent="."]
+position = Vector2( 336, 144 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 4 )
+action = "ui_down"
+
+[node name="right2" type="TouchScreenButton" parent="."]
+position = Vector2( 360, 120 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+action = "ui_right"
+
+[node name="up2" type="TouchScreenButton" parent="."]
+position = Vector2( 336, 96 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 1 )
+action = "ui_up"

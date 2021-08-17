@@ -1,0 +1,712 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://Cenas/Tileset/Spot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cenas/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cenas/Tileset/wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cenas/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cenas/btn_reset.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Cena5/script-base5.gd" type="Script" id=6]
+[ext_resource path="res://Cenas/UI/NameLevel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Cenas/Moves.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Cenas/Camera2D.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Cenas/Tileset/piso.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Cenas/passou_nivel/passou_nivel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Cenas/passou_nivel/btn_anterior.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Cenas/passou_nivel/btn_proximo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Cenas/Tileset/portao_abrindo.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Cenas/Tileset/portaofechado.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Custom Fonts/vcr/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Scripts/Cena3/btn_reset2.gd" type="Script" id=17]
+[ext_resource path="res://Imagens/stars/4 estrelas/4estrela_4.png" type="Texture" id=18]
+[ext_resource path="res://Imagens/stars/4 estrelas/4estrela_3.png" type="Texture" id=19]
+[ext_resource path="res://Imagens/stars/1 estrela/1estrela_2.png" type="Texture" id=20]
+[ext_resource path="res://Imagens/stars/4 estrelas/4estrela_2.png" type="Texture" id=21]
+[ext_resource path="res://Imagens/stars/5 estrelas/5estrela_2.png" type="Texture" id=22]
+[ext_resource path="res://Imagens/stars/3 estrelas/3estrela_1.png" type="Texture" id=23]
+[ext_resource path="res://Imagens/stars/5 estrelas/5estrela_4.png" type="Texture" id=24]
+[ext_resource path="res://Imagens/stars/2 estrelas/2estrela_3.png" type="Texture" id=25]
+[ext_resource path="res://Imagens/stars/1 estrela/1estrela_1.png" type="Texture" id=26]
+[ext_resource path="res://Imagens/stars/5 estrelas/5estrela_5.png" type="Texture" id=27]
+[ext_resource path="res://Imagens/stars/5 estrelas/5estrela_1.png" type="Texture" id=28]
+[ext_resource path="res://Imagens/stars/2 estrelas/2estrela_1.png" type="Texture" id=29]
+[ext_resource path="res://Imagens/stars/3 estrelas/3estrela_2.png" type="Texture" id=30]
+[ext_resource path="res://Imagens/stars/2 estrelas/2estrela_2.png" type="Texture" id=31]
+[ext_resource path="res://Imagens/stars/4 estrelas/4estrela_5.png" type="Texture" id=32]
+[ext_resource path="res://Imagens/stars/4 estrelas/4estrela_1.png" type="Texture" id=33]
+[ext_resource path="res://Imagens/stars/5 estrelas/5estrela_6.png" type="Texture" id=34]
+[ext_resource path="res://Imagens/stars/3 estrelas/3estrela_4.png" type="Texture" id=35]
+[ext_resource path="res://Imagens/stars/5 estrelas/5estrela_3.png" type="Texture" id=36]
+[ext_resource path="res://Imagens/stars/3 estrelas/3estrela_3.png" type="Texture" id=37]
+[ext_resource path="res://Cenas/controles.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scripts/Cena2/Spot2.gd" type="Script" id=39]
+[ext_resource path="res://Cenas/UI/bnt_menu.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Scripts/Cena2/Box2.gd" type="Script" id=41]
+[ext_resource path="res://Scripts/Popup.gd" type="Script" id=42]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 31 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "2estrelas",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 34 ) ],
+"loop": false,
+"name": "5estrelas",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "1estrela",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"loop": false,
+"name": "3estrelas",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "4estrelas",
+"speed": 3.0
+} ]
+
+[node name="map5" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 9 )]
+
+[node name="btn_reset" parent="." instance=ExtResource( 5 )]
+margin_left = 176.0
+margin_right = 208.0
+margin_bottom = 32.0
+expand_icon = true
+script = ExtResource( 17 )
+
+[node name="NameLevel" parent="." instance=ExtResource( 7 )]
+text = "L e v e l  2"
+
+[node name="Moves" parent="." instance=ExtResource( 8 )]
+margin_left = 144.0
+margin_right = 304.0
+
+[node name="piso" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="Sprite4" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite5" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite6" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite7" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite8" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite9" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite10" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite11" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite12" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite13" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite14" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite27" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 64 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite25" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite24" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite23" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite22" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite21" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite20" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite19" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite18" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite17" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite16" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite15" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite26" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 80 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite39" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite38" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite37" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite36" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite35" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite34" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite33" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite32" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite31" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite30" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite29" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite40" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 96 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite53" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite52" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite51" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite50" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite49" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite48" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite47" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite46" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite45" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite44" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite43" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite54" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 112 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite67" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite66" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite65" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite64" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite63" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite62" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite61" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite60" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite59" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite58" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite57" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite68" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 128 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite81" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite80" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite79" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite78" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite77" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite76" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite75" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite74" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite73" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite72" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite71" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite82" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 144 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite95" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 128, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite94" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 144, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite93" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 160, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite92" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 176, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite91" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 192, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite90" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 224, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite89" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 208, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite88" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 240, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite87" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 256, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite86" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 272, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite85" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 288, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite96" parent="piso" instance=ExtResource( 10 )]
+position = Vector2( 304, 160 )
+offset = Vector2( 8, 8 )
+
+[node name="ponte" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite28" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 96, 48 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite29" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 112, 48 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite31" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 96, 32 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite30" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 112, 32 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite33" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 96, 16 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite32" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 112, 16 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite35" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 96, 0 )
+offset = Vector2( 8, 8 )
+
+[node name="Sprite34" parent="ponte" instance=ExtResource( 10 )]
+position = Vector2( 112, 0 )
+offset = Vector2( 8, 8 )
+
+[node name="spots" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="Spot" parent="spots" instance=ExtResource( 1 )]
+position = Vector2( 304, 80 )
+script = ExtResource( 39 )
+
+[node name="Spot2" parent="spots" instance=ExtResource( 1 )]
+position = Vector2( 304, 144 )
+script = ExtResource( 39 )
+
+[node name="box" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="Box" parent="box" instance=ExtResource( 4 )]
+position = Vector2( 272, 128 )
+script = ExtResource( 41 )
+
+[node name="Box2" parent="box" instance=ExtResource( 4 )]
+position = Vector2( 272, 96 )
+script = ExtResource( 41 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144, 112 )
+
+[node name="controles" parent="." instance=ExtResource( 38 )]
+position = Vector2( 0, -16 )
+
+[node name="portao_abrindo" parent="." instance=ExtResource( 14 )]
+
+[node name="portaofechado" parent="." instance=ExtResource( 15 )]
+
+[node name="walls" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="wall" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 80 )
+
+[node name="wall2" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 64 )
+
+[node name="wall3" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 48 )
+
+[node name="wall21" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 160, 48 )
+
+[node name="wall22" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 176, 48 )
+
+[node name="wall23" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 192, 48 )
+
+[node name="wall24" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 208, 48 )
+
+[node name="wall25" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 224, 48 )
+
+[node name="wall26" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 240, 48 )
+
+[node name="wall27" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 256, 48 )
+
+[node name="wall28" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 272, 48 )
+
+[node name="wall29" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 288, 48 )
+
+[node name="wall30" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 48 )
+
+[node name="wall44" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 48 )
+
+[node name="wall46" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 160 )
+
+[node name="wall43" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 176 )
+
+[node name="wall42" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 128, 176 )
+
+[node name="wall41" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 144, 176 )
+
+[node name="wall40" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 160, 176 )
+
+[node name="wall39" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 176, 176 )
+
+[node name="wall38" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 192, 176 )
+
+[node name="wall37" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 208, 176 )
+
+[node name="wall52" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 288, 128 )
+
+[node name="wall53" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 128 )
+
+[node name="wall54" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 288, 96 )
+
+[node name="wall55" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 288, 64 )
+
+[node name="wall56" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 96 )
+
+[node name="wall57" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 64 )
+
+[node name="wall49" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 160 )
+
+[node name="wall50" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 288, 160 )
+
+[node name="wall36" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 224, 176 )
+
+[node name="wall35" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 240, 176 )
+
+[node name="wall34" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 256, 176 )
+
+[node name="wall33" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 272, 176 )
+
+[node name="wall32" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 288, 176 )
+
+[node name="wall31" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 176 )
+
+[node name="wall45" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 176 )
+
+[node name="wall4" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 96 )
+
+[node name="wall5" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 112 )
+
+[node name="wall6" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 128 )
+
+[node name="wall7" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 112, 144 )
+
+[node name="wall14" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 96 )
+
+[node name="wall13" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 80 )
+
+[node name="wall12" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 64 )
+
+[node name="wall11" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 112 )
+
+[node name="wall10" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 128 )
+
+[node name="wall9" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 144 )
+
+[node name="wall8" parent="walls" instance=ExtResource( 3 )]
+position = Vector2( 320, 160 )
+
+[node name="Popup" type="Control" parent="."]
+visible = false
+margin_right = 384.0
+margin_bottom = 208.0
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="passou_nivel" parent="Popup" instance=ExtResource( 11 )]
+position = Vector2( 192, 112 )
+
+[node name="btn_anterior" parent="Popup/passou_nivel" instance=ExtResource( 12 )]
+margin_top = 42.0
+margin_bottom = 57.0
+
+[node name="btn_proximo" parent="Popup/passou_nivel" instance=ExtResource( 13 )]
+margin_top = 21.0
+margin_bottom = 37.0
+
+[node name="Label" type="Label" parent="Popup/passou_nivel"]
+margin_left = -40.0
+margin_top = -29.0
+margin_right = 40.0
+margin_bottom = -15.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Popup/passou_nivel"]
+position = Vector2( 0, -45 )
+scale = Vector2( 0.675, 0.625 )
+frames = SubResource( 2 )
+animation = "3estrelas"
+frame = 3
+playing = true
+
+[node name="btn_reset2" parent="Popup/passou_nivel" instance=ExtResource( 5 )]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+expand_icon = true
+script = ExtResource( 17 )
+
+[node name="btn_salvar" type="Button" parent="."]
+visible = false
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bnt_menu" parent="." instance=ExtResource( 40 )]
+[connection signal="pressed" from="btn_reset" to="." method="_on_btn_reset_pressed"]
+[connection signal="pressed" from="Popup/passou_nivel/btn_anterior" to="." method="_on_btn_anterior_pressed"]
+[connection signal="pressed" from="Popup/passou_nivel/btn_proximo" to="." method="_on_btn_proximo_pressed"]
+[connection signal="pressed" from="Popup/passou_nivel/btn_reset2" to="." method="_on_btn_reset_pressed"]
+[connection signal="pressed" from="btn_salvar" to="." method="_on_btn_salvar_pressed"]

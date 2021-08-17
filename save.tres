@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Save.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+disabled1 = "false"
+disabled2 = "true"
+disabled3 = "true"
+disabled4 = "true"
+disabled5 = "true"
+disabled6 = "true"
+disabled7 = "true"
+disabled8 = "true"
+disabled9 = "true"
+contador_mundo1 = 0

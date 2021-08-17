@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tilesets/Spot/spot.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Cena1/Spot.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/Spot/spot-aceso.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.07296, 7.3267 )
+
+[node name="Spot" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Spot" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Spot"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spot"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( 8, 8 )
+[connection signal="body_entered" from="Spot" to="." method="_on_Spot_body_entered"]
+[connection signal="body_exited" from="Spot" to="." method="_on_Spot_body_exited"]
